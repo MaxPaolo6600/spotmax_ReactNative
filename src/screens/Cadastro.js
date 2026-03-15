@@ -1,6 +1,11 @@
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native"
 
-export default function Cadastro() {
+export default function Cadastro({ navigation }) {
+
+    async function cadastrar(){
+        navigation.navigate('Login')
+    }
+
     return (
         <View style={styles.body}>
             <View style={styles.card}>
@@ -17,8 +22,11 @@ export default function Cadastro() {
                 <TextInput
                     style={styles.input}
                 />
-                <TouchableOpacity style={styles.btn1}>
-                    <Text>Cadastrar</Text>
+                <TouchableOpacity style={styles.btn} onPress={cadastrar}>
+                    <Text style={styles.textBtn}>Cadastrar</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btn2} onPress={() => navigation.navigate('Login')}>
+                    <Text style={styles.textBtn}>Logar</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -41,7 +49,7 @@ const styles = StyleSheet.create({
     textTitle:{
         color: 'white',
         textAlign: 'center',
-        fontSize: 20,
+        fontSize: 25,
         fontWeight: 'bold',
         marginBottom: 10,
     },
@@ -56,6 +64,22 @@ const styles = StyleSheet.create({
         height: 50,
     },
     btn:{
+        justifyContent: 'center',
         backgroundColor: "#212121",
+        marginTop: 30,
+        borderRadius: 8,
+        height: 50,
+    },
+    textBtn:{
+        textAlign: 'center',
+        color: 'white',
+        fontSize: 18,
+    },
+    btn2:{
+        justifyContent: 'center',
+        backgroundColor: "#262B2D",
+        marginTop: 15,
+        borderRadius: 8,
+        height: 30,
     },
 })

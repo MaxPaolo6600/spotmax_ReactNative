@@ -1,16 +1,11 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Cadastro from './screens/Cadastro';
-
-const Stack = createNativeStackNavigator();
+import StackNavigator from "./src/routes/StackNavigator"
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name='Cadastro' component={Cadastro}/>
-      </Stack.Navigator>
+      <StackNavigator />
     </NavigationContainer>
   );
 }
