@@ -16,15 +16,14 @@ import cartao from "../../assets/img/cartao-de-credito.png"
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigator({ navigation }) {
-
     return (
         <Tab.Navigator
             screenOptions={{
                 tabBarStyle: {
                     backgroundColor: "#212121",
                     borderColor: '#212121',
-                    paddingTop: 10,
-                    height: 90,
+                    paddingTop: 25,
+                    height: 120,
                 },
                 headerStyle: {
                     backgroundColor: "#212121",
