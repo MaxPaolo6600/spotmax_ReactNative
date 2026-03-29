@@ -23,9 +23,8 @@ export default function TabNavigator({ navigation }) {
                 tabBarStyle: {
                     backgroundColor: "#212121",
                     borderColor: '#212121',
-                    
-                    paddingTop: 25,
-                    height: 120,
+                    paddingTop: 10,
+                    height: 90,
                 },
                 headerStyle: {
                     backgroundColor: "#212121",
@@ -34,6 +33,7 @@ export default function TabNavigator({ navigation }) {
                     shadowOpacity: 0.9,
                     shadowRadius: 100,
                     elevation: 100,
+                    height: 110,
                 },
                 headerTitle: () => (
                     <View style={styles.header}>
