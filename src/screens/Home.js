@@ -3,6 +3,8 @@ import { supabase } from "../../utils/supabase"
 import { useEffect, useState } from "react";
 import { ScrollView } from "react-native-gesture-handler";
 
+import procurar from "../../assets/img/procurar.png"
+
 export default function Home({ navigation }) {
     const [loading, setLoading] = useState(true);
     const [musicas, setMusicas] = useState([]);
@@ -45,11 +47,14 @@ export default function Home({ navigation }) {
 
     return (
         <View style={styles.body}>
-            <TextInput
+            <View style={styles.search}>
+                <TextInput
 
-            >
-                <Text>Pesquise</Text>
-            </TextInput>
+                >
+                    <Text>Pesquise</Text>
+                </TextInput>
+                <Image source={procurar} style={styles.searchImg}/>
+            </View>
             <View>
                 <Text>Músicas</Text>
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.carousel}>
@@ -127,5 +132,13 @@ const styles = StyleSheet.create({
         opacity: 0.5,
         marginBottom: 8,
         color: "white",
+    },
+    search:{
+        flexDirection: "row",
+        backgroundColor: "#FFF",
+    },
+    searchImg:{
+        width: 10,
+        height: 10,
     },
 })

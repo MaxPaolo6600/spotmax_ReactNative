@@ -74,19 +74,19 @@ export default function TabNavigator({ navigation }) {
             }}
         >
             <Tab.Screen
-                name="Config"
-                component={Config}
-                options={{
-                    tabBarIcon: () => (
-                        <Image source={iconConfig} style={styles.icon} />
-                    ),
-                }} />
-            <Tab.Screen
                 name="Home"
                 component={Home}
                 options={{
                     tabBarIcon: () => (
                         <Image source={iconHome} style={styles.icon} />
+                    ),
+                }} />
+            <Tab.Screen
+                name="Config"
+                component={Config}
+                options={{
+                    tabBarIcon: () => (
+                        <Image source={iconConfig} style={styles.icon} />
                     ),
                 }} />
             <Tab.Screen
