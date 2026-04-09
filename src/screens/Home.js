@@ -47,16 +47,14 @@ export default function Home({ navigation }) {
 
     return (
         <View style={styles.body}>
-            <View style={styles.search}>
+            <View style={styles.searchMain}>
                 <TextInput
-
-                >
-                    <Text>Pesquise</Text>
-                </TextInput>
-                <Image source={procurar} style={styles.searchImg}/>
+                    style={styles.search}
+                />
+                <Image source={procurar} style={styles.searchImg} />
             </View>
-            <View>
-                <Text>Músicas</Text>
+            <View style={styles.mainMusic}>
+                <Text style={styles.title}>Músicas</Text>
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.carousel}>
                     {musicas.map((musica) => {
                         const album = musica.criacao?.albums?.[0];
@@ -92,6 +90,9 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#262B2D',
     },
+    mainMusic:{
+        padding: 10,
+    },
     carousel: {
         gap: 24,
     },
@@ -121,6 +122,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: '600',
         color: "white",
+        paddingBottom: 10,
     },
     album: {
         fontSize: 12,
@@ -133,12 +135,26 @@ const styles = StyleSheet.create({
         marginBottom: 8,
         color: "white",
     },
-    search:{
-        flexDirection: "row",
-        backgroundColor: "#FFF",
+    searchMain: {
+        position: 'relative',
+        justifyContent: 'center',
+        marginTop: 30,
+        marginBottom: 30,
     },
-    searchImg:{
-        width: 10,
-        height: 10,
+    search: {
+        backgroundColor: "#212121",
+        marginStart: 10,
+        width: 200,
+        borderRadius: 25,
+        borderColor: "#274E5D",
+        borderWidth: 1,
+        paddingStart:45,
+        color: "white",
+    },
+    searchImg: {
+        position: 'absolute',
+        width: 20,
+        height: 20,
+        marginStart: 30,
     },
 })
